@@ -3,400 +3,738 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Job Market Keyword Analysis — Digital Marketing, Growth & SEO Manager</title>
+<title>Laura Blanco — Résumé</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Montserrat:wght@500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #1A1A1A; background: #F8F7F4; line-height: 1.6; }
-  .page { max-width: 960px; margin: 0 auto; padding: 40px 32px; }
+  :root{
+    --bg:        #FAFAF7;
+    --bg-panel:  #F1F1EB;
+    --ink:       #15150F;
+    --ink-soft:  #62625A;
+    --ink-faint: #9B9B91;
+    --accent:    #2A46F2;
+    --accent-soft: #E9ECFF;
+    --rule:      #DEDED3;
+    --rule-strong: #C7C7B9;
 
-  /* Header */
-  .header { border-bottom: 2px solid #1A2B4A; padding-bottom: 20px; margin-bottom: 32px; }
-  .header-meta { font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
-  .header h1 { font-size: 22px; font-weight: 700; color: #1A2B4A; margin-bottom: 4px; }
-  .header-sub { font-size: 13px; color: #555; }
-  .header-stats { display: flex; gap: 24px; margin-top: 16px; }
-  .stat { text-align: center; }
-  .stat-num { font-size: 28px; font-weight: 700; color: #1A2B4A; display: block; }
-  .stat-lbl { font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 0.05em; }
+    --f-display: 'Montserrat', sans-serif;
+    --f-body:    'Source Serif 4', Georgia, serif;
+    --f-mono:    'IBM Plex Mono', monospace;
 
-  /* Section */
-  .section { margin-bottom: 36px; }
-  .section-title { font-size: 11px; font-weight: 700; color: #1A2B4A; text-transform: uppercase; letter-spacing: 0.1em; border-left: 3px solid #1A2B4A; padding-left: 10px; margin-bottom: 16px; }
+    --maxw: 1180px;
+    --gutter: clamp(20px, 5vw, 64px);
+  }
 
-  /* Bar chart */
-  .bar-table { width: 100%; border-collapse: collapse; }
-  .bar-table td { padding: 3px 6px; vertical-align: middle; }
-  .bar-label { font-size: 12px; color: #333; width: 200px; text-align: right; white-space: nowrap; }
-  .bar-track { background: #EBEBEB; border-radius: 3px; height: 18px; width: 100%; }
-  .bar-fill { height: 18px; border-radius: 3px; display: flex; align-items: center; padding-left: 6px; }
-  .bar-fill span { font-size: 10px; font-weight: 700; color: #fff; white-space: nowrap; }
-  .bar-count { font-size: 11px; color: #888; width: 36px; text-align: left; }
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+    *{ animation: none !important; transition: none !important; }
+  }
 
-  /* Tag clouds */
-  .tag-group { margin-bottom: 14px; }
-  .tag-group-label { font-size: 11px; font-weight: 700; color: #555; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
-  .tags { display: flex; flex-wrap: wrap; gap: 5px; }
-  .tag { font-size: 11px; padding: 3px 9px; border-radius: 20px; border: 1px solid; }
-  .tag-shared  { background: #EEEDFE; color: #3C3489; border-color: #AFA9EC; }
-  .tag-seo     { background: #E1F5EE; color: #085041; border-color: #5DCAA5; }
-  .tag-growth  { background: #E6F1FB; color: #0C447C; border-color: #85B7EB; }
-  .tag-emerging{ background: #FAECE7; color: #993C1D; border-color: #F0997B; }
-  .tag-tool    { background: #F1EFE8; color: #444441; border-color: #B4B2A9; }
-  .tag-soft    { background: #FAEEDA; color: #633806; border-color: #EF9F27; }
+  body{
+    margin:0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--f-body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
 
-  /* Two-col grid */
-  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  a{ color: inherit; }
+  ::selection{ background: var(--accent-soft); color: var(--ink); }
 
-  /* Card */
-  .card { background: #fff; border: 1px solid #E0DED8; border-radius: 8px; padding: 16px 18px; }
-  .card-title { font-size: 13px; font-weight: 700; color: #1A2B4A; margin-bottom: 4px; }
-  .card-sub { font-size: 11px; color: #888; margin-bottom: 10px; }
+  :focus-visible{
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
 
-  /* Fit table */
-  .fit-table { width: 100%; border-collapse: collapse; font-size: 12px; }
-  .fit-table th { text-align: left; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #888; border-bottom: 1px solid #E0DED8; padding: 6px 8px; }
-  .fit-table td { padding: 7px 8px; border-bottom: 1px solid #F0EFEB; vertical-align: top; }
-  .fit-table tr:last-child td { border-bottom: none; }
-  .pill { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 20px; }
-  .pill-high { background: #E1F5EE; color: #0F6E56; }
-  .pill-med  { background: #E6F1FB; color: #185FA5; }
-  .pill-low  { background: #F1EFE8; color: #5F5E5A; }
+  h1,h2,h3{
+    font-family: var(--f-display);
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
 
-  /* Insight boxes */
-  .insight { border-left: 3px solid #1A2B4A; padding: 10px 14px; background: #F0EFF9; border-radius: 0 6px 6px 0; margin-bottom: 10px; }
-  .insight-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #3C3489; margin-bottom: 3px; }
-  .insight p { font-size: 12px; color: #26215C; line-height: 1.5; }
+  .wrap{ max-width: var(--maxw); margin: 0 auto; padding: 0 var(--gutter); }
 
-  .insight-warn { background: #FAECE7; border-color: #D85A30; }
-  .insight-warn .insight-label { color: #993C1D; }
-  .insight-warn p { color: #4A1B0C; }
+  .eyebrow{
+    font-family: var(--f-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
 
-  .insight-ok { background: #E1F5EE; border-color: #1D9E75; }
-  .insight-ok .insight-label { color: #0F6E56; }
-  .insight-ok p { color: #04342C; }
+  /* ---------- stat chip — the recurring data-signal device ---------- */
+  .stat{
+    font-family: var(--f-mono);
+    font-weight: 500;
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: 0.04em 0.42em;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
 
-  /* Footer */
-  .footer { border-top: 1px solid #E0DED8; padding-top: 16px; margin-top: 40px; font-size: 11px; color: #AAA; display: flex; justify-content: space-between; }
+  /* ---------- top nav ---------- */
+  .topnav{
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(250,250,247,0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .topnav .wrap{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    height: 56px;
+  }
+  .topnav .brand{
+    font-family: var(--f-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .topnav nav{ display:flex; gap: clamp(14px,3vw,28px); }
+  .topnav nav a{
+    font-family: var(--f-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--ink-soft);
+    padding: 4px 0;
+    border-bottom: 1px solid transparent;
+    transition: color .15s ease, border-color .15s ease;
+  }
+  .topnav nav a:hover,
+  .topnav nav a.is-active{
+    color: var(--ink);
+    border-bottom-color: var(--accent);
+  }
 
-  /* Legend */
-  .legend { display: flex; gap: 16px; margin-bottom: 10px; font-size: 11px; color: #555; }
-  .legend-dot { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 4px; vertical-align: middle; }
+  /* ---------- hero ---------- */
+  .hero{ padding: clamp(48px,9vw,108px) 0 clamp(36px,6vw,64px); position: relative; }
+  .hero h1{
+    font-size: clamp(3.2rem, 11vw, 7rem);
+    font-weight: 800;
+    line-height: 0.92;
+    margin: 14px 0 18px;
+  }
+  .hero .tagline{
+    font-family: var(--f-mono);
+    font-size: clamp(0.85rem, 1.6vw, 1rem);
+    color: var(--ink-soft);
+    letter-spacing: 0.01em;
+    margin: 0 0 30px;
+  }
+  .hero .bio{
+    max-width: 56ch;
+    font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+    color: var(--ink);
+  }
 
-  @media print {
-    body { background: #fff; }
-    .page { padding: 20px; }
+  .growth-line{ width: 100%; max-width: 640px; height: auto; margin-top: clamp(28px,5vw,48px); display:block; }
+  .growth-line path{
+    fill:none; stroke: var(--accent); stroke-width: 1.6;
+    stroke-dasharray: 600; stroke-dashoffset: 600;
+    animation: draw 1.6s ease-out 0.2s forwards;
+  }
+  .growth-line circle{ fill: var(--accent); opacity:0; animation: dot-in .4s ease-out forwards; }
+  .growth-line circle:nth-of-type(1){ animation-delay: .5s; }
+  .growth-line circle:nth-of-type(2){ animation-delay: .95s; }
+  .growth-line circle:nth-of-type(3){ animation-delay: 1.4s; }
+  .growth-line circle:nth-of-type(4){ animation-delay: 1.7s; }
+  @keyframes draw{ to{ stroke-dashoffset: 0; } }
+  @keyframes dot-in{ to{ opacity:1; } }
+  @media (prefers-reduced-motion: reduce){
+    .growth-line path{ stroke-dashoffset: 0; }
+    .growth-line circle{ opacity:1; }
+  }
+
+  hr.rule{ border:none; border-top: 1px solid var(--rule); margin:0; }
+
+  section{ padding: clamp(48px,8vw,88px) 0; }
+  section + section{ border-top: 1px solid var(--rule); }
+
+  h2.section-title{
+    font-size: clamp(0.78rem, 1.4vw, 0.86rem);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--ink-faint);
+    margin-bottom: clamp(28px,4vw,44px);
+  }
+
+  /* ---------- timeline ---------- */
+  .timeline-layout{
+    display:grid;
+    grid-template-columns: 220px 1fr;
+    gap: clamp(24px,4vw,56px);
+    align-items: start;
+  }
+
+  .timeline-nav{
+    position: sticky;
+    top: 76px;
+    display:flex;
+    flex-direction: column;
+    gap: 2px;
+    border-left: 1px solid var(--rule);
+    padding-left: 18px;
+  }
+  .timeline-nav a{
+    text-decoration:none;
+    color: var(--ink-faint);
+    font-family: var(--f-mono);
+    font-size: 0.74rem;
+    line-height: 1.5;
+    padding: 7px 0;
+    position: relative;
+    transition: color .15s ease;
+  }
+  .timeline-nav a .yr{ display:block; letter-spacing: 0.03em; }
+  .timeline-nav a .co{ display:block; color: var(--ink-faint); font-size: 0.68rem; opacity:.8; }
+  .timeline-nav a::before{
+    content:"";
+    position:absolute; left:-19px; top: 13px;
+    width:6px; height:6px; border-radius:50%;
+    background: var(--rule-strong);
+    transition: background .15s ease, transform .15s ease;
+  }
+  .timeline-nav a:hover{ color: var(--ink); }
+  .timeline-nav a.is-active{ color: var(--ink); }
+  .timeline-nav a.is-active .co{ color: var(--accent); }
+  .timeline-nav a.is-active::before{ background: var(--accent); transform: scale(1.25); }
+
+  .entry{
+    padding-bottom: clamp(36px,6vw,56px);
+    margin-bottom: clamp(36px,6vw,56px);
+    border-bottom: 1px solid var(--rule);
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity .5s ease, transform .5s ease;
+  }
+  .entry:last-child{ border-bottom:none; margin-bottom:0; padding-bottom:0; }
+  .entry.is-visible{ opacity:1; transform:none; }
+
+  .entry .dates{
+    font-family: var(--f-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    display:block;
+    margin-bottom: 8px;
+  }
+  .entry .role{
+    font-size: clamp(1.15rem, 2vw, 1.5rem);
+    font-weight: 700;
+  }
+  .entry .company{
+    font-family: var(--f-display);
+    font-weight: 500;
+    color: var(--ink-soft);
+    margin: 2px 0 4px;
+    font-size: 0.98rem;
+  }
+  .entry .company-desc{
+    font-style: italic;
+    color: var(--ink-faint);
+    font-size: 0.92rem;
+    max-width: 60ch;
+    margin: 0 0 16px;
+  }
+  .entry ul.bullets{
+    list-style: none;
+    margin: 16px 0 0;
+    padding: 0;
+    display:flex; flex-direction:column; gap: 11px;
+    max-width: 68ch;
+  }
+  .entry ul.bullets li{
+    position: relative;
+    padding-left: 18px;
+    font-size: 0.98rem;
+  }
+  .entry ul.bullets li::before{
+    content:"—";
+    position:absolute; left:0; top:0;
+    color: var(--rule-strong);
+    font-family: var(--f-mono);
+  }
+
+  /* ---------- education / continuing ed ---------- */
+  .edu-list{ display:flex; flex-direction:column; gap: 26px; max-width: 760px; }
+  .edu-row{
+    display:grid;
+    grid-template-columns: 130px 1fr;
+    gap: 18px;
+    align-items: baseline;
+  }
+  .edu-row .when{
+    font-family: var(--f-mono);
+    font-size: 0.74rem;
+    color: var(--ink-soft);
+    letter-spacing: 0.04em;
+  }
+  .edu-row .degree{ font-family: var(--f-display); font-weight: 600; font-size: 1.02rem; }
+  .edu-row .school{ color: var(--ink-soft); font-size: 0.92rem; margin-top: 2px; }
+
+  .cont-ed-list{ list-style:none; margin:0; padding:0; max-width: 600px; display:flex; flex-direction:column; gap:12px; }
+  .cont-ed-list li{ position:relative; padding-left:18px; }
+  .cont-ed-list li::before{ content:"—"; position:absolute; left:0; color:var(--rule-strong); font-family: var(--f-mono); }
+
+  /* ---------- languages ---------- */
+  .lang-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
+    gap: 28px 32px;
+    max-width: 760px;
+  }
+  .lang-card .name{ font-family: var(--f-display); font-weight: 600; font-size: 1.02rem; }
+  .lang-card .level{ font-family: var(--f-mono); font-size: 0.76rem; color: var(--ink-soft); margin-top: 3px; }
+  .lang-card .dots{ display:flex; gap:5px; margin-top:10px; }
+  .lang-card .dots span{ width:7px; height:7px; border-radius:50%; background: var(--rule-strong); }
+  .lang-card .dots span.on{ background: var(--accent); }
+
+  /* ---------- skills ---------- */
+  .skills-columns{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(28px,5vw,64px);
+  }
+  .skills-columns h3{
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+  .tagcloud{ display:flex; flex-wrap:wrap; gap:8px; }
+  .tagcloud span{
+    font-family: var(--f-mono);
+    font-size: 0.78rem;
+    padding: 6px 11px;
+    border: 1px solid var(--rule-strong);
+    border-radius: 100px;
+    color: var(--ink-soft);
+    transition: border-color .15s ease, color .15s ease;
+  }
+  .tagcloud span:hover{ border-color: var(--accent); color: var(--ink); }
+
+  footer{
+    padding: 32px 0 56px;
+    font-family: var(--f-mono);
+    font-size: 0.72rem;
+    color: var(--ink-faint);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 880px){
+    .timeline-layout{ grid-template-columns: 1fr; }
+    .timeline-nav{
+      position: sticky; top: 56px;
+      flex-direction: row; overflow-x: auto;
+      border-left:none; border-bottom: 1px solid var(--rule);
+      padding: 12px 0 14px;
+      gap: 18px;
+      background: var(--bg);
+      z-index: 10;
+    }
+    .timeline-nav a{ flex: 0 0 auto; padding: 0; white-space: nowrap; }
+    .timeline-nav a::before{ left: 50%; top: -10px; transform: translateX(-50%); }
+    .timeline-nav a.is-active::before{ transform: translateX(-50%) scale(1.25); }
+    .skills-columns{ grid-template-columns: 1fr; }
+    .topnav nav{ display:none; }
+  }
+
+  @media (max-width: 560px){
+    .edu-row{ grid-template-columns: 1fr; gap:4px; }
+  }
+
+  @media print{
+    .topnav, .timeline-nav, .growth-line{ display:none !important; }
+    .timeline-layout{ grid-template-columns: 1fr; }
+    .entry{ opacity:1 !important; transform:none !important; break-inside: avoid; }
+    body{ font-size: 12px; }
+    section + section{ border-top: none; }
   }
 </style>
 </head>
 <body>
-<div class="page">
 
-  <!-- HEADER -->
-  <div class="header">
-    <div class="header-meta">Keyword & skills analysis · Laura Fontcuberta · June 2026</div>
-    <h1>Job Market Analysis — Digital Marketing, Growth & SEO Manager</h1>
-    <div class="header-sub">25 job offers reviewed across Spain, United States, and United Kingdom</div>
-    <div class="header-stats">
-      <div class="stat"><span class="stat-num">25</span><span class="stat-lbl">Offers analysed</span></div>
-      <div class="stat"><span class="stat-num">15</span><span class="stat-lbl">Growth / Digital Mktg</span></div>
-      <div class="stat"><span class="stat-num">10</span><span class="stat-lbl">SEO Manager</span></div>
-      <div class="stat"><span class="stat-num">5</span><span class="stat-lbl">Markets</span></div>
-      <div class="stat"><span class="stat-num">40+</span><span class="stat-lbl">Keywords mapped</span></div>
-    </div>
+<div class="topnav">
+  <div class="wrap">
+    <span class="brand">Laura Blanco — Résumé</span>
+    <nav>
+      <a href="#timeline" data-nav>Timeline</a>
+      <a href="#education" data-nav>Education</a>
+      <a href="#languages" data-nav>Languages</a>
+      <a href="#skills" data-nav>Skills</a>
+    </nav>
   </div>
-
-  <!-- SECTION 1: GROWTH / DIGITAL MARKETING KEYWORDS -->
-  <div class="section">
-    <div class="section-title">1. Keywords — Growth & Digital Marketing Manager (15 offers)</div>
-    <div class="legend">
-      <span><span class="legend-dot" style="background:#0F6E56;"></span>High frequency (10–15)</span>
-      <span><span class="legend-dot" style="background:#378ADD;"></span>Medium (6–9)</span>
-      <span><span class="legend-dot" style="background:#888780;"></span>Lower (3–5)</span>
-    </div>
-    <table class="bar-table">
-      <tr><td class="bar-label">Growth Marketing</td><td><div class="bar-track"><div class="bar-fill" style="width:100%;background:#0F6E56;"><span>15/15</span></div></div></td><td class="bar-count">15</td></tr>
-      <tr><td class="bar-label">A/B Testing</td><td><div class="bar-track"><div class="bar-fill" style="width:93%;background:#0F6E56;"><span>14/15</span></div></div></td><td class="bar-count">14</td></tr>
-      <tr><td class="bar-label">Paid Media / Paid Search</td><td><div class="bar-track"><div class="bar-fill" style="width:87%;background:#0F6E56;"><span>13/15</span></div></div></td><td class="bar-count">13</td></tr>
-      <tr><td class="bar-label">CRO (Conversion Rate Optimisation)</td><td><div class="bar-track"><div class="bar-fill" style="width:87%;background:#0F6E56;"><span>13/15</span></div></div></td><td class="bar-count">13</td></tr>
-      <tr><td class="bar-label">Data-driven / Analytics</td><td><div class="bar-track"><div class="bar-fill" style="width:87%;background:#0F6E56;"><span>13/15</span></div></div></td><td class="bar-count">13</td></tr>
-      <tr><td class="bar-label">SEO (technical / organic)</td><td><div class="bar-track"><div class="bar-fill" style="width:80%;background:#0F6E56;"><span>12/15</span></div></div></td><td class="bar-count">12</td></tr>
-      <tr><td class="bar-label">Demand Generation</td><td><div class="bar-track"><div class="bar-fill" style="width:73%;background:#0F6E56;"><span>11/15</span></div></div></td><td class="bar-count">11</td></tr>
-      <tr><td class="bar-label">Marketing Automation</td><td><div class="bar-track"><div class="bar-fill" style="width:73%;background:#0F6E56;"><span>11/15</span></div></div></td><td class="bar-count">11</td></tr>
-      <tr><td class="bar-label">CAC / LTV / ROI</td><td><div class="bar-track"><div class="bar-fill" style="width:67%;background:#0F6E56;"><span>10/15</span></div></div></td><td class="bar-count">10</td></tr>
-      <tr><td class="bar-label">Pipeline / Revenue</td><td><div class="bar-track"><div class="bar-fill" style="width:60%;background:#378ADD;"><span>9/15</span></div></div></td><td class="bar-count">9</td></tr>
-      <tr><td class="bar-label">B2B SaaS</td><td><div class="bar-track"><div class="bar-fill" style="width:60%;background:#378ADD;"><span>9/15</span></div></div></td><td class="bar-count">9</td></tr>
-      <tr><td class="bar-label">Cross-functional</td><td><div class="bar-track"><div class="bar-fill" style="width:60%;background:#378ADD;"><span>9/15</span></div></div></td><td class="bar-count">9</td></tr>
-      <tr><td class="bar-label">Email Marketing / CRM</td><td><div class="bar-track"><div class="bar-fill" style="width:53%;background:#378ADD;"><span>8/15</span></div></div></td><td class="bar-count">8</td></tr>
-      <tr><td class="bar-label">AI tools / AI fluency</td><td><div class="bar-track"><div class="bar-fill" style="width:53%;background:#378ADD;"><span>8/15</span></div></div></td><td class="bar-count">8</td></tr>
-      <tr><td class="bar-label">Multi-channel campaigns</td><td><div class="bar-track"><div class="bar-fill" style="width:53%;background:#378ADD;"><span>8/15</span></div></div></td><td class="bar-count">8</td></tr>
-      <tr><td class="bar-label">Funnel optimisation</td><td><div class="bar-track"><div class="bar-fill" style="width:47%;background:#378ADD;"><span>7/15</span></div></div></td><td class="bar-count">7</td></tr>
-      <tr><td class="bar-label">ABM (Account-Based Marketing)</td><td><div class="bar-track"><div class="bar-fill" style="width:40%;background:#378ADD;"><span>6/15</span></div></div></td><td class="bar-count">6</td></tr>
-      <tr><td class="bar-label">HubSpot</td><td><div class="bar-track"><div class="bar-fill" style="width:40%;background:#378ADD;"><span>6/15</span></div></div></td><td class="bar-count">6</td></tr>
-      <tr><td class="bar-label">Lifecycle Marketing</td><td><div class="bar-track"><div class="bar-fill" style="width:33%;background:#888780;"><span>5/15</span></div></div></td><td class="bar-count">5</td></tr>
-      <tr><td class="bar-label">GEO / AI Search / LLMs</td><td><div class="bar-track"><div class="bar-fill" style="width:27%;background:#888780;"><span>4/15</span></div></div></td><td class="bar-count">4</td></tr>
-      <tr><td class="bar-label">Looker Studio / Dashboards</td><td><div class="bar-track"><div class="bar-fill" style="width:27%;background:#888780;"><span>4/15</span></div></div></td><td class="bar-count">4</td></tr>
-    </table>
-  </div>
-
-  <!-- SECTION 2: SEO MANAGER KEYWORDS -->
-  <div class="section">
-    <div class="section-title">2. Keywords — SEO Manager (10 offers)</div>
-    <table class="bar-table">
-      <tr><td class="bar-label">Technical SEO</td><td><div class="bar-track"><div class="bar-fill" style="width:100%;background:#0F6E56;"><span>10/10</span></div></div></td><td class="bar-count">10</td></tr>
-      <tr><td class="bar-label">GEO / AEO / AI Search</td><td><div class="bar-track"><div class="bar-fill" style="width:80%;background:#0F6E56;"><span>8/10</span></div></div></td><td class="bar-count">8</td></tr>
-      <tr><td class="bar-label">GA4 + Search Console</td><td><div class="bar-track"><div class="bar-fill" style="width:80%;background:#0F6E56;"><span>8/10</span></div></div></td><td class="bar-count">8</td></tr>
-      <tr><td class="bar-label">SEMrush / Ahrefs</td><td><div class="bar-track"><div class="bar-fill" style="width:80%;background:#0F6E56;"><span>8/10</span></div></div></td><td class="bar-count">8</td></tr>
-      <tr><td class="bar-label">Screaming Frog / crawling</td><td><div class="bar-track"><div class="bar-fill" style="width:70%;background:#0F6E56;"><span>7/10</span></div></div></td><td class="bar-count">7</td></tr>
-      <tr><td class="bar-label">Content strategy / search intent</td><td><div class="bar-track"><div class="bar-fill" style="width:70%;background:#0F6E56;"><span>7/10</span></div></div></td><td class="bar-count">7</td></tr>
-      <tr><td class="bar-label">Core Web Vitals</td><td><div class="bar-track"><div class="bar-fill" style="width:70%;background:#0F6E56;"><span>7/10</span></div></div></td><td class="bar-count">7</td></tr>
-      <tr><td class="bar-label">Keyword research</td><td><div class="bar-track"><div class="bar-fill" style="width:70%;background:#0F6E56;"><span>7/10</span></div></div></td><td class="bar-count">7</td></tr>
-      <tr><td class="bar-label">Schema / structured data</td><td><div class="bar-track"><div class="bar-fill" style="width:60%;background:#378ADD;"><span>6/10</span></div></div></td><td class="bar-count">6</td></tr>
-      <tr><td class="bar-label">Cross-functional collaboration</td><td><div class="bar-track"><div class="bar-fill" style="width:60%;background:#378ADD;"><span>6/10</span></div></div></td><td class="bar-count">6</td></tr>
-      <tr><td class="bar-label">CRO / A/B Testing</td><td><div class="bar-track"><div class="bar-fill" style="width:60%;background:#378ADD;"><span>6/10</span></div></div></td><td class="bar-count">6</td></tr>
-      <tr><td class="bar-label">Internal linking</td><td><div class="bar-track"><div class="bar-fill" style="width:60%;background:#378ADD;"><span>6/10</span></div></div></td><td class="bar-count">6</td></tr>
-      <tr><td class="bar-label">LLM optimisation</td><td><div class="bar-track"><div class="bar-fill" style="width:50%;background:#378ADD;"><span>5/10</span></div></div></td><td class="bar-count">5</td></tr>
-      <tr><td class="bar-label">Data storytelling / dashboards</td><td><div class="bar-track"><div class="bar-fill" style="width:50%;background:#378ADD;"><span>5/10</span></div></div></td><td class="bar-count">5</td></tr>
-      <tr><td class="bar-label">E-E-A-T signals</td><td><div class="bar-track"><div class="bar-fill" style="width:40%;background:#888780;"><span>4/10</span></div></div></td><td class="bar-count">4</td></tr>
-      <tr><td class="bar-label">Looker Studio</td><td><div class="bar-track"><div class="bar-fill" style="width:40%;background:#888780;"><span>4/10</span></div></div></td><td class="bar-count">4</td></tr>
-      <tr><td class="bar-label">Link building / domain authority</td><td><div class="bar-track"><div class="bar-fill" style="width:40%;background:#888780;"><span>4/10</span></div></div></td><td class="bar-count">4</td></tr>
-      <tr><td class="bar-label">AI tools fluency</td><td><div class="bar-track"><div class="bar-fill" style="width:40%;background:#888780;"><span>4/10</span></div></div></td><td class="bar-count">4</td></tr>
-    </table>
-  </div>
-
-  <!-- SECTION 3: SHARED KEYWORDS -->
-  <div class="section">
-    <div class="section-title">3. Keywords shared across both profiles — highest CV priority</div>
-    <div class="tag-group">
-      <div class="tags">
-        <span class="tag tag-shared">SEO (technical + organic)</span>
-        <span class="tag tag-shared">GA4</span>
-        <span class="tag tag-shared">Google Search Console</span>
-        <span class="tag tag-shared">SEMrush</span>
-        <span class="tag tag-shared">Data-driven</span>
-        <span class="tag tag-shared">A/B Testing</span>
-        <span class="tag tag-shared">CRO</span>
-        <span class="tag tag-shared">Content strategy</span>
-        <span class="tag tag-shared">Cross-functional</span>
-        <span class="tag tag-shared">Funnel optimisation</span>
-        <span class="tag tag-shared">HubSpot</span>
-        <span class="tag tag-shared">Looker Studio</span>
-        <span class="tag tag-shared">Keyword research</span>
-        <span class="tag tag-shared">Performance reporting</span>
-        <span class="tag tag-shared">AI tools</span>
-        <span class="tag tag-shared">Budget management</span>
-        <span class="tag tag-shared">Stakeholder management</span>
-        <span class="tag tag-shared">End-to-end ownership</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- SECTION 4: SKILLS MAP -->
-  <div class="section">
-    <div class="section-title">4. Skills map by category</div>
-    <div class="two-col">
-      <div>
-        <div class="tag-group">
-          <div class="tag-group-label">Hard skills — SEO Manager</div>
-          <div class="tags">
-            <span class="tag tag-seo">Technical SEO</span>
-            <span class="tag tag-seo">GEO / AEO</span>
-            <span class="tag tag-seo">Schema markup</span>
-            <span class="tag tag-seo">Core Web Vitals</span>
-            <span class="tag tag-seo">Crawlability / indexation</span>
-            <span class="tag tag-seo">Screaming Frog</span>
-            <span class="tag tag-seo">LLM visibility</span>
-            <span class="tag tag-seo">E-E-A-T</span>
-            <span class="tag tag-seo">Link building</span>
-            <span class="tag tag-seo">On-page optimisation</span>
-            <span class="tag tag-seo">Share of prompt</span>
-          </div>
-        </div>
-        <div class="tag-group" style="margin-top:12px;">
-          <div class="tag-group-label">Hard skills — Growth / Digital Mktg</div>
-          <div class="tags">
-            <span class="tag tag-growth">Demand generation</span>
-            <span class="tag tag-growth">Marketing automation</span>
-            <span class="tag tag-growth">Salesforce / CRM</span>
-            <span class="tag tag-growth">Paid media</span>
-            <span class="tag tag-growth">CAC / LTV / ROAS</span>
-            <span class="tag tag-growth">Pipeline / revenue</span>
-            <span class="tag tag-growth">B2B SaaS</span>
-            <span class="tag tag-growth">ABM</span>
-            <span class="tag tag-growth">Lifecycle marketing</span>
-            <span class="tag tag-growth">Lead scoring</span>
-            <span class="tag tag-growth">Attribution modelling</span>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div class="tag-group">
-          <div class="tag-group-label">Soft skills — both profiles</div>
-          <div class="tags">
-            <span class="tag tag-soft">Data-driven mindset</span>
-            <span class="tag tag-soft">Ownership mentality</span>
-            <span class="tag tag-soft">Self-starter</span>
-            <span class="tag tag-soft">Cross-functional collab</span>
-            <span class="tag tag-soft">Stakeholder management</span>
-            <span class="tag tag-soft">Strategic thinking</span>
-            <span class="tag tag-soft">Builder mindset</span>
-            <span class="tag tag-soft">Bias to action</span>
-            <span class="tag tag-soft">Strong communicator</span>
-            <span class="tag tag-soft">Problem-solving</span>
-            <span class="tag tag-soft">Autonomy</span>
-            <span class="tag tag-soft">Executive communication</span>
-          </div>
-        </div>
-        <div class="tag-group" style="margin-top:12px;">
-          <div class="tag-group-label">Emerging keywords — 2025–2026 trend</div>
-          <div class="tags">
-            <span class="tag tag-emerging">GEO (Generative Engine Optimisation)</span>
-            <span class="tag tag-emerging">AI Search / LLM visibility</span>
-            <span class="tag tag-emerging">AI-native workflows</span>
-            <span class="tag tag-emerging">Agentic tools (n8n, Claude Code)</span>
-            <span class="tag tag-emerging">GTM engineering</span>
-            <span class="tag tag-emerging">PLG (Product-Led Growth)</span>
-            <span class="tag tag-emerging">Answer engine optimisation</span>
-            <span class="tag tag-emerging">Intent signals (6sense, Clay)</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- SECTION 5: TOOLS -->
-  <div class="section">
-    <div class="section-title">5. Tools & platforms cited across 25 offers</div>
-    <div class="tags">
-      <span class="tag tag-tool">HubSpot</span>
-      <span class="tag tag-tool">Salesforce</span>
-      <span class="tag tag-tool">GA4</span>
-      <span class="tag tag-tool">Google Search Console</span>
-      <span class="tag tag-tool">Looker Studio</span>
-      <span class="tag tag-tool">SEMrush</span>
-      <span class="tag tag-tool">Ahrefs</span>
-      <span class="tag tag-tool">Screaming Frog</span>
-      <span class="tag tag-tool">Meta Ads Manager</span>
-      <span class="tag tag-tool">Google Ads</span>
-      <span class="tag tag-tool">LinkedIn Ads</span>
-      <span class="tag tag-tool">Hotjar / Microsoft Clarity</span>
-      <span class="tag tag-tool">VWO</span>
-      <span class="tag tag-tool">Klaviyo / Braze / Brevo</span>
-      <span class="tag tag-tool">Mixpanel / Amplitude</span>
-      <span class="tag tag-tool">BigQuery</span>
-      <span class="tag tag-tool">GTM</span>
-      <span class="tag tag-tool">Asana</span>
-      <span class="tag tag-tool">Clay</span>
-      <span class="tag tag-tool">6sense / Bombora</span>
-      <span class="tag tag-tool">n8n / Zapier / Make</span>
-      <span class="tag tag-tool">Figma</span>
-      <span class="tag tag-tool">Retool / Framer</span>
-      <span class="tag tag-tool">AppsFlyer</span>
-      <span class="tag tag-tool">Segment</span>
-      <span class="tag tag-tool">SearchPilot</span>
-      <span class="tag tag-tool">Profound.ai</span>
-      <span class="tag tag-tool">Brightedge / Conductor</span>
-      <span class="tag tag-tool">Deepcrawl</span>
-      <span class="tag tag-tool">YouTube Ads</span>
-      <span class="tag tag-tool">TikTok Ads</span>
-    </div>
-  </div>
-
-  <!-- SECTION 6: FIT BY OFFER -->
-  <div class="section">
-    <div class="section-title">6. Profile fit by offer</div>
-    <table class="fit-table">
-      <thead>
-        <tr>
-          <th>Offer</th>
-          <th>Company</th>
-          <th>Fit</th>
-          <th>Key match / gap</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>B2B Organic Growth Manager</td><td>The Fork</td><td><span class="pill pill-high">High</span></td><td>SEO + CRO + HubSpot + GA4 + BigQuery + A/B testing</td></tr>
-        <tr><td>SEO & GEO Manager</td><td>Deporvillage</td><td><span class="pill pill-high">High</span></td><td>Gap: Schema.org and GEO not explicit in CV yet</td></tr>
-        <tr><td>Organic Growth Manager (SEO)</td><td>Codeway</td><td><span class="pill pill-high">High</span></td><td>EdTech + full stack. Gap: Next.js (non-blocking)</td></tr>
-        <tr><td>SEO & Organic Lead</td><td>IRA Financial</td><td><span class="pill pill-high">High</span></td><td>8+ yrs req. met. Editorial background differentiates</td></tr>
-        <tr><td>Growth Marketing Manager</td><td>MyWellbeing</td><td><span class="pill pill-med">Medium</span></td><td>"Education before purchase" — direct La Salle parallel</td></tr>
-        <tr><td>Senior SEO Manager</td><td>Click&Boat</td><td><span class="pill pill-med">Medium</span></td><td>Gap: marketplace exp. + JS rendering depth</td></tr>
-        <tr><td>Growth Marketing Manager</td><td>SplitMetrics</td><td><span class="pill pill-med">Medium</span></td><td>Gap: agentic tools (n8n, Claude Code)</td></tr>
-        <tr><td>SEO Manager</td><td>LGC</td><td><span class="pill pill-med">Medium</span></td><td>Agency management req. — covered by La Salle vendors</td></tr>
-        <tr><td>Growth Marketing Manager</td><td>Aon</td><td><span class="pill pill-med">Medium</span></td><td>B2B + Salesforce strong match. Gap: HR/services sector</td></tr>
-        <tr><td>Growth Marketing Manager</td><td>August</td><td><span class="pill pill-low">Low</span></td><td>Requires Python / JS / APIs — dev-heavy profile</td></tr>
-        <tr><td>Digital Marketing Manager</td><td>Stradivarius</td><td><span class="pill pill-low">Low</span></td><td>eCommerce + intensive media buying — different sector</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- SECTION 7: STRATEGIC INSIGHTS -->
-  <div class="section">
-    <div class="section-title">7. Strategic insights & action points</div>
-
-    <div class="insight insight-warn">
-      <div class="insight-label">Gap — urgent</div>
-      <p>GEO / AEO absent from CV. Present in 8/10 SEO Manager offers. If no hands-on experience yet, this is the most high-return upskilling area before applying to SEO-track roles.</p>
-    </div>
-
-    <div class="insight insight-warn">
-      <div class="insight-label">Gap — urgent</div>
-      <p>Schema markup / structured data not mentioned anywhere in the CV. Cited in 6/10 SEO offers. Add if genuine experience exists at La Salle or previous roles.</p>
-    </div>
-
-    <div class="insight">
-      <div class="insight-label">Differentiator — underused</div>
-      <p>BigQuery appears in 0/10 SEO Manager offers as a requirement — meaning having it is a genuine edge over most candidates. Frame it as "data depth rare in a marketing profile."</p>
-    </div>
-
-    <div class="insight">
-      <div class="insight-label">Differentiator — underused</div>
-      <p>Audiovisual / editorial background is a direct asset for SEO Manager roles at IRA Financial, Inkitt, and LGC, which explicitly require content creation and optimisation ability — not just auditing.</p>
-    </div>
-
-    <div class="insight insight-ok">
-      <div class="insight-label">Confirmed strength</div>
-      <p>+42% organic lead growth over 5 years at La Salle works for both profiles: proves organic impact for SEO Manager, and funnel ownership with measurable result for Growth / Digital Marketing Manager.</p>
-    </div>
-
-    <div class="insight insight-ok">
-      <div class="insight-label">Confirmed strength</div>
-      <p>Dual EdTech background (La Salle + Zigurat) is rare and directly valued by Codeway and MyWellbeing, both of which cite "marketing a product that requires education before purchase" as a key requirement.</p>
-    </div>
-  </div>
-
-  <!-- SECTION 8: EXPERIENCE / MARKET CONTEXT -->
-  <div class="section">
-    <div class="section-title">8. Market context</div>
-    <div class="two-col">
-      <div class="card">
-        <div class="card-title">Years of experience required</div>
-        <div class="card-sub">Across all 25 offers</div>
-        <table style="width:100%;font-size:12px;border-collapse:collapse;">
-          <tr><td style="padding:4px 0;color:#555;">2–3 years</td><td style="text-align:right;color:#1A2B4A;font-weight:700;">2 offers</td></tr>
-          <tr><td style="padding:4px 0;color:#555;">3–5 years</td><td style="text-align:right;color:#1A2B4A;font-weight:700;">5 offers</td></tr>
-          <tr><td style="padding:4px 0;color:#555;">5–7 years</td><td style="text-align:right;color:#1A2B4A;font-weight:700;">10 offers</td></tr>
-          <tr><td style="padding:4px 0;color:#555;">8–10+ years</td><td style="text-align:right;color:#1A2B4A;font-weight:700;">4 offers (inc. Stradivarius 10+, IRA Financial 8+)</td></tr>
-        </table>
-      </div>
-      <div class="card">
-        <div class="card-title">Company context by profile</div>
-        <div class="card-sub">Dominant employer types</div>
-        <table style="width:100%;font-size:12px;border-collapse:collapse;">
-          <tr><td style="padding:4px 0;color:#555;">B2B SaaS / Tech</td><td style="text-align:right;color:#1A2B4A;font-weight:700;">9 offers</td></tr>
-          <tr><td style="padding:4px 0;color:#555;">eCommerce / marketplace</td><td style="text-align:right;color:#1A2B4A;font-weight:700;">6 offers</td></tr>
-          <tr><td style="padding:4px 0;color:#555;">Agency / consultancy</td><td style="text-align:right;color:#1A2B4A;font-weight:700;">4 offers</td></tr>
-          <tr><td style="padding:4px 0;color:#555;">EdTech / Education</td><td style="text-align:right;color:#1A2B4A;font-weight:700;">2 offers</td></tr>
-          <tr><td style="padding:4px 0;color:#555;">Enterprise / financial services</td><td style="text-align:right;color:#1A2B4A;font-weight:700;">4 offers</td></tr>
-        </table>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer">
-    <span>Laura Fontcuberta · Job Market Analysis · June 2026</span>
-    <span>25 offers · Spain · USA · UK</span>
-  </div>
-
 </div>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Résumé — Digital Marketing</span>
+    <h1>Laura Blanco</h1>
+    <p class="tagline">Digital Marketing &amp; Creative Growth Strategy · SEO · Content &amp; Automation</p>
+    <p class="bio">Digital Marketing Manager with <span class="stat">10+ years</span> in EdTech and higher education, specializing in SEO and AI Search (GEO), marketing automation, CRM strategy, and turning data into actionable decisions.</p>
+
+    <svg class="growth-line" viewBox="0 0 640 90" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,75 C 90,70 140,55 200,50 C 270,44 300,20 380,18 C 460,16 480,38 560,12 C 590,2 610,8 640,4" />
+      <circle cx="200" cy="50" r="3.5"></circle>
+      <circle cx="380" cy="18" r="3.5"></circle>
+      <circle cx="560" cy="12" r="3.5"></circle>
+      <circle cx="640" cy="4" r="3.5"></circle>
+    </svg>
+  </div>
+</header>
+
+<main>
+
+<section id="timeline">
+  <div class="wrap">
+    <h2 class="section-title">Professional Timeline</h2>
+    <div class="timeline-layout">
+
+      <aside class="timeline-nav" id="timelineNav">
+        <a href="#job-1"><span class="yr">2021 — Present</span><span class="co">La Salle</span></a>
+        <a href="#job-2"><span class="yr">2018 — 2021</span><span class="co">La Salle</span></a>
+        <a href="#job-3"><span class="yr">2017 — 2018</span><span class="co">Zigurat</span></a>
+        <a href="#job-4"><span class="yr">2017</span><span class="co">Zigurat</span></a>
+        <a href="#job-5"><span class="yr">2016 — 2018</span><span class="co">BIMCommunity</span></a>
+        <a href="#job-6"><span class="yr">2014 — 2016</span><span class="co">CRU 2001 SL</span></a>
+        <a href="#job-7"><span class="yr">2014 — 2015</span><span class="co">Barcelona Forfree</span></a>
+        <a href="#job-8"><span class="yr">2013</span><span class="co">HelpMyCash</span></a>
+        <a href="#job-9"><span class="yr">2010 — 2011</span><span class="co">MECAL</span></a>
+        <a href="#job-10"><span class="yr">2010</span><span class="co">Betevé</span></a>
+      </aside>
+
+      <div class="timeline-entries">
+
+        <article class="entry" id="job-1">
+          <span class="dates">Apr 2021 — Present</span>
+          <h3 class="role">Digital Marketing Manager</h3>
+          <p class="company">La Salle Campus Barcelona</p>
+          <ul class="bullets">
+            <li>Drove a <span class="stat">42% increase</span> in organic lead acquisition over the last four years (2021–2025) through a compound, multi-year strategy spanning technical SEO, content optimization, marketing automation, and CRO.</li>
+            <li>Took ownership of the SEO roadmap end-to-end — audits, on-page fixes, keyword research, content briefs, schema/structured data, link building and domain authority — and tied every decision back to organic traffic and lead targets.</li>
+            <li>Led the corporate website redesign for La Salle-URL, partnering with external agencies and internal IT to get SEO and AI search architecture, UX, and brand requirements all pulling in the same direction.</li>
+            <li>Led the redesign of a new custom CMS — including wireframes and analytics — for campaign landing pages with the aim of improving their performance and lead generation.</li>
+            <li>Spearheaded the GA4 migration and BigQuery set up — event architecture and conversion tracking — without losing historical reporting continuity.</li>
+            <li>Brought WhatsApp into Salesforce and Marketing Cloud as a new nurturing channel, opening up attribution coverage that didn't exist before.</li>
+            <li>Turned raw data into decisions: built performance dashboards in GA4, Search Console, Data Studio, and BigQuery that teams actually used.</li>
+            <li>Owned the department's annual digital budget, putting spend where it earned its keep across multiple platforms and projects.</li>
+            <li>Led and coordinated a team of four, splitting workload across content, design and development while keeping experimentation and data at the center of how the team worked.</li>
+            <li>Kept Marketing, Comms, IT and external agencies aligned on organic positioning, brand storytelling, and corporate objectives across every faculty.</li>
+            <li>Ran internal training sessions to keep the wider marketing team sharp on SEO and AI Search (GEO), analytics, and AI-assisted workflows.</li>
+          </ul>
+        </article>
+
+        <article class="entry" id="job-2">
+          <span class="dates">Dec 2018 — Apr 2021</span>
+          <h3 class="role">Digital &amp; Communications Specialist</h3>
+          <p class="company">La Salle Campus Barcelona</p>
+          <p class="company-desc">International university campus. Founding member of Universitat Ramon Llull (URL). Top-ranked in engineering, architecture and business internationally.</p>
+          <ul class="bullets">
+            <li>Built digital communication strategies that strengthen brand presence, audience engagement, and multi-channel performance across web and social.</li>
+            <li>Got hands-on with technical SEO and on-page optimization across the corporate website — metadata, internal linking, content restructuring — to lift organic visibility.</li>
+            <li>Tested new formats and content types across social channels to grow reach and community interaction.</li>
+            <li>Tracked KPIs across channels in Google Analytics and used the insights to keep reallocating effort toward what worked.</li>
+            <li>Brought audiovisual production skills in-house, producing and editing video content for institutional and marketing use.</li>
+            <li>Adapted messaging on the fly across web and social during the COVID-19 crisis, keeping the university's communications clear and trustworthy when it mattered most.</li>
+          </ul>
+        </article>
+
+        <article class="entry" id="job-3">
+          <span class="dates">Oct 2017 — Dec 2018</span>
+          <h3 class="role">Social Media Manager</h3>
+          <p class="company">Zigurat Global Institute of Technology</p>
+          <p class="company-desc">EdTech institution specializing in digitalization of the construction industry. 20K alumni across 100+ countries. Programmes backed by Universitat de Barcelona and IL3.</p>
+          <ul class="bullets">
+            <li>Built an organic-plus-paid social strategy from the ground up — pulling in <span class="stat">€100K</span> in revenue through organic channels alone (including Quora) within 12 months.</li>
+            <li>Ran paid campaigns across Facebook, Instagram, LinkedIn, and Twitter, shifting budget toward whatever the conversion data said was working.</li>
+            <li>Took social media from afterthought to the third-highest revenue-generating channel within one year, with reporting that proved its contribution to overall enrolment revenue.</li>
+            <li>Mined Google Analytics, SEMRush, and social listening for content ideas — then tailored messaging by platform and audience segment.</li>
+            <li>Owned performance reporting and budget calls for paid social across multiple international markets, given Zigurat's globally distributed alumni base.</li>
+            <li>Worked hand-in-hand with content and design to produce platform-native assets, not one-size-fits-all creative.</li>
+          </ul>
+        </article>
+
+        <article class="entry" id="job-4">
+          <span class="dates">Feb 2017 — Oct 2017</span>
+          <h3 class="role">Community Manager</h3>
+          <p class="company">Zigurat Global Institute of Technology</p>
+          <ul class="bullets">
+            <li>Built engaged communities through Facebook Live and Groups, turning brand presence into real sales support and loyalty.</li>
+            <li>Made social media the second-highest traffic channel within one year by consistently driving qualified organic traffic to the website.</li>
+            <li>Kept content flowing across channels with a steady posting cadence and quick community response times.</li>
+            <li>Covered industry events live on social media, putting Zigurat in front of the professional communities that mattered most.</li>
+          </ul>
+        </article>
+
+        <article class="entry" id="job-5">
+          <span class="dates">Mar 2016 — Dec 2018</span>
+          <h3 class="role">Social Media Strategist</h3>
+          <p class="company">BIMCommunity</p>
+          <p class="company-desc">World's largest professional portal for BIM and digital transformation in AEC. Partners: Bentley Systems, Leica Geosystems, Graphisoft.</p>
+          <ul class="bullets">
+            <li>Built an organic growth strategy from scratch across multiple social channels — <span class="stat">10K</span> registered users in year one.</li>
+            <li>Created multi-format content for social media and the corporate website — articles, visuals, video — tailored to a technical AEC audience.</li>
+            <li>Built an SEO strategy by audience segment across the BIM and construction tech space, covering keyword targeting and content structure.</li>
+            <li>Kept BIMCommunity active daily across Facebook, Twitter, LinkedIn, Quora and Reddit, sparking discussion among industry professionals.</li>
+            <li>Watched competitors and emerging trends in the AEC industry, feeding it all back into content and channel strategy.</li>
+            <li>Worked with IT to keep improving the website's visibility, performance, and UX.</li>
+            <li>Represented BIMCommunity as Media Partner at major European BIM events — including BIM Expo, Barcelona Building Construmat, buildingSMART International Summit, EUBIM, and European BIM Summit — producing on-the-ground coverage and content.</li>
+          </ul>
+        </article>
+
+        <article class="entry" id="job-6">
+          <span class="dates">Feb 2014 — Feb 2016</span>
+          <h3 class="role">Communications Manager</h3>
+          <p class="company">CRU 2001 SL</p>
+          <p class="company-desc">Multidisciplinary cultural project that combines a center dedicated to promoting the literary arts with its own dining space, El Café.</p>
+          <ul class="bullets">
+            <li>Built the venue's website from scratch — architecture, content, and a booking engine for direct reservations.</li>
+            <li>Ran a reputation management strategy across Booking, Expedia, TripAdvisor, and Google, staying on top of reviews to protect how the brand was perceived.</li>
+            <li>Promoted new business opportunities, primarily on social media, by leveraging platforms such as Foursquare and Yelp to engage with potential customers.</li>
+            <li>Produced content and graphic design across print and digital materials — menus, promotional pieces, posters.</li>
+            <li>Organized cultural events in the literary sector, building relationships with the local cultural community.</li>
+          </ul>
+        </article>
+
+        <article class="entry" id="job-7">
+          <span class="dates">2014 — 2015</span>
+          <h3 class="role">Editor</h3>
+          <p class="company">Barcelona Forfree</p>
+          <ul class="bullets">
+            <li>Edited cultural and lifestyle content for a Barcelona-focused digital publication — events, exhibitions, local recommendations.</li>
+          </ul>
+        </article>
+
+        <article class="entry" id="job-8">
+          <span class="dates">2013</span>
+          <h3 class="role">Digital Editor</h3>
+          <p class="company">HelpMyCash</p>
+          <p class="company-desc">Leading Spanish fintech comparison portal for personal finance products.</p>
+          <ul class="bullets">
+            <li>Ran an SEO-aligned editorial calendar, planning content around target keywords relevant to personal finance topics.</li>
+            <li>Turned financial concepts into accessible articles a general consumer audience could actually use.</li>
+            <li>Coordinated with the broader content team to ensure published articles aligned with the site's organic search strategy.</li>
+          </ul>
+        </article>
+
+        <article class="entry" id="job-9">
+          <span class="dates">2010 — 2011</span>
+          <h3 class="role">Programming Assistant</h3>
+          <p class="company">MECAL</p>
+          <p class="company-desc">Recognized as a qualifying festival for the Goya Awards, receiving more than <span class="stat">5K</span> submissions annually from over 100 countries.</p>
+          <ul class="bullets">
+            <li>Supported programming and promotion for one of Barcelona's leading short film and animation festivals.</li>
+            <li>Coordinated with filmmakers, sponsors, and media partners on scheduling and promotional materials.</li>
+            <li>Contributed to festival promotion content across print and digital channels.</li>
+          </ul>
+        </article>
+
+        <article class="entry" id="job-10">
+          <span class="dates">2010</span>
+          <h3 class="role">Editor &amp; Filmmaker</h3>
+          <p class="company">Betevé</p>
+          <p class="company-desc">Multi-award-winning TV public broadcaster in Barcelona.</p>
+          <ul class="bullets">
+            <li>Produced written content for the digital edition of Betevé Notícies.</li>
+            <li>Managed end-to-end audiovisual production — from research and scripting to filming and editing — for broadcast pieces.</li>
+            <li>Balanced journalistic accuracy with accessible storytelling, working within public media's editorial guidelines.</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <h2 class="section-title">Education</h2>
+    <div class="edu-list">
+      <div class="edu-row">
+        <span class="when">2016 — 2018</span>
+        <div>
+          <div class="degree">Master's in Contemporary Film and Audiovisual Studies</div>
+          <div class="school">Universitat Pompeu Fabra (UPF)</div>
+        </div>
+      </div>
+      <div class="edu-row">
+        <span class="when">2013 — 2014</span>
+        <div>
+          <div class="degree">Film Direction</div>
+          <div class="school">ESCAC — Escola Superior de Cinema i Audiovisuals de Catalunya</div>
+        </div>
+      </div>
+      <div class="edu-row">
+        <span class="when">2013</span>
+        <div>
+          <div class="degree">Photography &amp; Cinema</div>
+          <div class="school">GrisArt International School of Photography</div>
+        </div>
+      </div>
+      <div class="edu-row">
+        <span class="when">2007 — 2013</span>
+        <div>
+          <div class="degree">Audiovisual Communication</div>
+          <div class="school">Blanquerna (URL) / UOC</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="continuing-education">
+  <div class="wrap">
+    <h2 class="section-title">Continuing Education</h2>
+    <ul class="cont-ed-list">
+      <li>Google Analytics 4 — Mide y Vencerás</li>
+      <li>Marketing Mix Modelling — Mide y Vencerás</li>
+    </ul>
+  </div>
+</section>
+
+<section id="languages">
+  <div class="wrap">
+    <h2 class="section-title">Languages</h2>
+    <div class="lang-grid">
+      <div class="lang-card">
+        <div class="name">Spanish</div>
+        <div class="level">Native</div>
+        <div class="dots"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span></div>
+      </div>
+      <div class="lang-card">
+        <div class="name">Catalan</div>
+        <div class="level">Native</div>
+        <div class="dots"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span></div>
+      </div>
+      <div class="lang-card">
+        <div class="name">English</div>
+        <div class="level">Professional working proficiency (C1)</div>
+        <div class="dots"><span class="on"></span><span class="on"></span><span class="on"></span><span></span></div>
+      </div>
+      <div class="lang-card">
+        <div class="name">German</div>
+        <div class="level">Basic (B2)</div>
+        <div class="dots"><span class="on"></span><span class="on"></span><span></span><span></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-columns">
+      <div>
+        <h3>Hard Skills</h3>
+        <div class="tagcloud">
+          <span>Google Analytics 4</span>
+          <span>Google Tag Manager</span>
+          <span>Google Search Console</span>
+          <span>BigQuery</span>
+          <span>Data Studio</span>
+          <span>SEMRush</span>
+          <span>CrazyEgg</span>
+          <span>Schema markup</span>
+          <span>Hubspot</span>
+          <span>Salesforce</span>
+          <span>Marketing Cloud</span>
+          <span>Mailchimp</span>
+          <span>SEO / AI Search</span>
+          <span>Crawability / indexation</span>
+          <span>Core Web Vitals</span>
+          <span>Link building</span>
+          <span>Marketing automation</span>
+          <span>Figma</span>
+          <span>Lifecycle marketing</span>
+          <span>Lead scoring</span>
+        </div>
+      </div>
+      <div>
+        <h3>Soft Skills</h3>
+        <div class="tagcloud">
+          <span>Data-driven mindset</span>
+          <span>Ownership mentality</span>
+          <span>Self-starter</span>
+          <span>Stakeholder management</span>
+          <span>Strategic thinking</span>
+          <span>Problem-solving</span>
+          <span>Autonomy</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">Laura Blanco — Résumé</div>
+</footer>
+
+<script>
+(function(){
+  // Reveal timeline entries on scroll
+  var entries = document.querySelectorAll('.entry');
+  var revealObserver = new IntersectionObserver(function(items){
+    items.forEach(function(item){
+      if(item.isIntersecting){ item.target.classList.add('is-visible'); }
+    });
+  }, { threshold: 0.12 });
+  entries.forEach(function(el){ revealObserver.observe(el); });
+
+  // Scrollspy: timeline sidebar
+  var navLinks = document.querySelectorAll('#timelineNav a');
+  var navMap = {};
+  navLinks.forEach(function(a){ navMap[a.getAttribute('href').slice(1)] = a; });
+
+  var spyObserver = new IntersectionObserver(function(items){
+    items.forEach(function(item){
+      var link = navMap[item.target.id];
+      if(!link) return;
+      if(item.isIntersecting){
+        navLinks.forEach(function(l){ l.classList.remove('is-active'); });
+        link.classList.add('is-active');
+      }
+    });
+  }, { rootMargin: '-40% 0px -50% 0px', threshold: 0 });
+  entries.forEach(function(el){ spyObserver.observe(el); });
+
+  // Scrollspy: top section nav
+  var topLinks = document.querySelectorAll('.topnav a[data-nav]');
+  var topMap = {};
+  topLinks.forEach(function(a){ topMap[a.getAttribute('href').slice(1)] = a; });
+  var sections = document.querySelectorAll('section[id]');
+  var topObserver = new IntersectionObserver(function(items){
+    items.forEach(function(item){
+      var link = topMap[item.target.id];
+      if(!link) return;
+      if(item.isIntersecting){
+        topLinks.forEach(function(l){ l.classList.remove('is-active'); });
+        link.classList.add('is-active');
+      }
+    });
+  }, { rootMargin: '-10% 0px -80% 0px', threshold: 0 });
+  sections.forEach(function(s){ topObserver.observe(s); });
+})();
+</script>
+
 </body>
 </html>
