@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Job Market Keyword Analysis — Digital Marketing, Growth & SEO Manager</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #1A1A1A; background: #F8F7F4; line-height: 1.6; }
+  .page { max-width: 960px; margin: 0 auto; padding: 40px 32px; }
+
+  /* Header */
+  .header { border-bottom: 2px solid #1A2B4A; padding-bottom: 20px; margin-bottom: 32px; }
+  .header-meta { font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
+  .header h1 { font-size: 22px; font-weight: 700; color: #1A2B4A; margin-bottom: 4px; }
+  .header-sub { font-size: 13px; color: #555; }
+  .header-stats { display: flex; gap: 24px; margin-top: 16px; }
+  .stat { text-align: center; }
+  .stat-num { font-size: 28px; font-weight: 700; color: #1A2B4A; display: block; }
+  .stat-lbl { font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 0.05em; }
+
+  /* Section */
+  .section { margin-bottom: 36px; }
+  .section-title { font-size: 11px; font-weight: 700; color: #1A2B4A; text-transform: uppercase; letter-spacing: 0.1em; border-left: 3px solid #1A2B4A; padding-left: 10px; margin-bottom: 16px; }
+
+  /* Bar chart */
+  .bar-table { width: 100%; border-collapse: collapse; }
+  .bar-table td { padding: 3px 6px; vertical-align: middle; }
+  .bar-label { font-size: 12px; color: #333; width: 200px; text-align: right; white-space: nowrap; }
+  .bar-track { background: #EBEBEB; border-radius: 3px; height: 18px; width: 100%; }
+  .bar-fill { height: 18px; border-radius: 3px; display: flex; align-items: center; padding-left: 6px; }
+  .bar-fill span { font-size: 10px; font-weight: 700; color: #fff; white-space: nowrap; }
+  .bar-count { font-size: 11px; color: #888; width: 36px; text-align: left; }
+
+  /* Tag clouds */
+  .tag-group { margin-bottom: 14px; }
+  .tag-group-label { font-size: 11px; font-weight: 700; color: #555; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 5px; }
+  .tag { font-size: 11px; padding: 3px 9px; border-radius: 20px; border: 1px solid; }
+  .tag-shared  { background: #EEEDFE; color: #3C3489; border-color: #AFA9EC; }
+  .tag-seo     { background: #E1F5EE; color: #085041; border-color: #5DCAA5; }
+  .tag-growth  { background: #E6F1FB; color: #0C447C; border-color: #85B7EB; }
+  .tag-emerging{ background: #FAECE7; color: #993C1D; border-color: #F0997B; }
+  .tag-tool    { background: #F1EFE8; color: #444441; border-color: #B4B2A9; }
+  .tag-soft    { background: #FAEEDA; color: #633806; border-color: #EF9F27; }
+
+  /* Two-col grid */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+  /* Card */
+  .card { background: #fff; border: 1px solid #E0DED8; border-radius: 8px; padding: 16px 18px; }
+  .card-title { font-size: 13px; font-weight: 700; color: #1A2B4A; margin-bottom: 4px; }
+  .card-sub { font-size: 11px; color: #888; margin-bottom: 10px; }
+
+  /* Fit table */
+  .fit-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .fit-table th { text-align: left; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #888; border-bottom: 1px solid #E0DED8; padding: 6px 8px; }
+  .fit-table td { padding: 7px 8px; border-bottom: 1px solid #F0EFEB; vertical-align: top; }
+  .fit-table tr:last-child td { border-bottom: none; }
+  .pill { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 20px; }
+  .pill-high { background: #E1F5EE; color: #0F6E56; }
+  .pill-med  { background: #E6F1FB; color: #185FA5; }
+  .pill-low  { background: #F1EFE8; color: #5F5E5A; }
+
+  /* Insight boxes */
+  .insight { border-left: 3px solid #1A2B4A; padding: 10px 14px; background: #F0EFF9; border-radius: 0 6px 6px 0; margin-bottom: 10px; }
+  .insight-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #3C3489; margin-bottom: 3px; }
+  .insight p { font-size: 12px; color: #26215C; line-height: 1.5; }
+
+  .insight-warn { background: #FAECE7; border-color: #D85A30; }
+  .insight-warn .insight-label { color: #993C1D; }
+  .insight-warn p { color: #4A1B0C; }
+
+  .insight-ok { background: #E1F5EE; border-color: #1D9E75; }
+  .insight-ok .insight-label { color: #0F6E56; }
+  .insight-ok p { color: #04342C; }
+
+  /* Footer */
+  .footer { border-top: 1px solid #E0DED8; padding-top: 16px; margin-top: 40px; font-size: 11px; color: #AAA; display: flex; justify-content: space-between; }
+
+  /* Legend */
+  .legend { display: flex; gap: 16px; margin-bottom: 10px; font-size: 11px; color: #555; }
+  .legend-dot { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 4px; vertical-align: middle; }
+
+  @media print {
+    body { background: #fff; }
+    .page { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-meta">Keyword & skills analysis · Laura Fontcuberta · June 2026</div>
+    <h1>Job Market Analysis — Digital Marketing, Growth & SEO Manager</h1>
+    <div class="header-sub">25 job offers reviewed across Spain, United States, and United Kingdom</div>
+    <div class="header-stats">
+      <div class="stat"><span class="stat-num">25</span><span class="stat-lbl">Offers analysed</span></div>
+      <div class="stat"><span class="stat-num">15</span><span class="stat-lbl">Growth / Digital Mktg</span></div>
+      <div class="stat"><span class="stat-num">10</span><span class="stat-lbl">SEO Manager</span></div>
+      <div class="stat"><span class="stat-num">5</span><span class="stat-lbl">Markets</span></div>
+      <div class="stat"><span class="stat-num">40+</span><span class="stat-lbl">Keywords mapped</span></div>
+    </div>
+  </div>
+
+  <!-- SECTION 1: GROWTH / DIGITAL MARKETING KEYWORDS -->
+  <div class="section">
+    <div class="section-title">1. Keywords — Growth & Digital Marketing Manager (15 offers)</div>
+    <div class="legend">
+      <span><span class="legend-dot" style="background:#0F6E56;"></span>High frequency (10–15)</span>
+      <span><span class="legend-dot" style="background:#378ADD;"></span>Medium (6–9)</span>
+      <span><span class="legend-dot" style="background:#888780;"></span>Lower (3–5)</span>
+    </div>
+    <table class="bar-table">
+      <tr><td class="bar-label">Growth Marketing</td><td><div class="bar-track"><div class="bar-fill" style="width:100%;background:#0F6E56;"><span>15/15</span></div></div></td><td class="bar-count">15</td></tr>
+      <tr><td class="bar-label">A/B Testing</td><td><div class="bar-track"><div class="bar-fill" style="width:93%;background:#0F6E56;"><span>14/15</span></div></div></td><td class="bar-count">14</td></tr>
+      <tr><td class="bar-label">Paid Media / Paid Search</td><td><div class="bar-track"><div class="bar-fill" style="width:87%;background:#0F6E56;"><span>13/15</span></div></div></td><td class="bar-count">13</td></tr>
+      <tr><td class="bar-label">CRO (Conversion Rate Optimisation)</td><td><div class="bar-track"><div class="bar-fill" style="width:87%;background:#0F6E56;"><span>13/15</span></div></div></td><td class="bar-count">13</td></tr>
+      <tr><td class="bar-label">Data-driven / Analytics</td><td><div class="bar-track"><div class="bar-fill" style="width:87%;background:#0F6E56;"><span>13/15</span></div></div></td><td class="bar-count">13</td></tr>
+      <tr><td class="bar-label">SEO (technical / organic)</td><td><div class="bar-track"><div class="bar-fill" style="width:80%;background:#0F6E56;"><span>12/15</span></div></div></td><td class="bar-count">12</td></tr>
+      <tr><td class="bar-label">Demand Generation</td><td><div class="bar-track"><div class="bar-fill" style="width:73%;background:#0F6E56;"><span>11/15</span></div></div></td><td class="bar-count">11</td></tr>
+      <tr><td class="bar-label">Marketing Automation</td><td><div class="bar-track"><div class="bar-fill" style="width:73%;background:#0F6E56;"><span>11/15</span></div></div></td><td class="bar-count">11</td></tr>
+      <tr><td class="bar-label">CAC / LTV / ROI</td><td><div class="bar-track"><div class="bar-fill" style="width:67%;background:#0F6E56;"><span>10/15</span></div></div></td><td class="bar-count">10</td></tr>
+      <tr><td class="bar-label">Pipeline / Revenue</td><td><div class="bar-track"><div class="bar-fill" style="width:60%;background:#378ADD;"><span>9/15</span></div></div></td><td class="bar-count">9</td></tr>
+      <tr><td class="bar-label">B2B SaaS</td><td><div class="bar-track"><div class="bar-fill" style="width:60%;background:#378ADD;"><span>9/15</span></div></div></td><td class="bar-count">9</td></tr>
+      <tr><td class="bar-label">Cross-functional</td><td><div class="bar-track"><div class="bar-fill" style="width:60%;background:#378ADD;"><span>9/15</span></div></div></td><td class="bar-count">9</td></tr>
+      <tr><td class="bar-label">Email Marketing / CRM</td><td><div class="bar-track"><div class="bar-fill" style="width:53%;background:#378ADD;"><span>8/15</span></div></div></td><td class="bar-count">8</td></tr>
+      <tr><td class="bar-label">AI tools / AI fluency</td><td><div class="bar-track"><div class="bar-fill" style="width:53%;background:#378ADD;"><span>8/15</span></div></div></td><td class="bar-count">8</td></tr>
+      <tr><td class="bar-label">Multi-channel campaigns</td><td><div class="bar-track"><div class="bar-fill" style="width:53%;background:#378ADD;"><span>8/15</span></div></div></td><td class="bar-count">8</td></tr>
+      <tr><td class="bar-label">Funnel optimisation</td><td><div class="bar-track"><div class="bar-fill" style="width:47%;background:#378ADD;"><span>7/15</span></div></div></td><td class="bar-count">7</td></tr>
+      <tr><td class="bar-label">ABM (Account-Based Marketing)</td><td><div class="bar-track"><div class="bar-fill" style="width:40%;background:#378ADD;"><span>6/15</span></div></div></td><td class="bar-count">6</td></tr>
+      <tr><td class="bar-label">HubSpot</td><td><div class="bar-track"><div class="bar-fill" style="width:40%;background:#378ADD;"><span>6/15</span></div></div></td><td class="bar-count">6</td></tr>
+      <tr><td class="bar-label">Lifecycle Marketing</td><td><div class="bar-track"><div class="bar-fill" style="width:33%;background:#888780;"><span>5/15</span></div></div></td><td class="bar-count">5</td></tr>
+      <tr><td class="bar-label">GEO / AI Search / LLMs</td><td><div class="bar-track"><div class="bar-fill" style="width:27%;background:#888780;"><span>4/15</span></div></div></td><td class="bar-count">4</td></tr>
+      <tr><td class="bar-label">Looker Studio / Dashboards</td><td><div class="bar-track"><div class="bar-fill" style="width:27%;background:#888780;"><span>4/15</span></div></div></td><td class="bar-count">4</td></tr>
+    </table>
+  </div>
+
+  <!-- SECTION 2: SEO MANAGER KEYWORDS -->
+  <div class="section">
+    <div class="section-title">2. Keywords — SEO Manager (10 offers)</div>
+    <table class="bar-table">
+      <tr><td class="bar-label">Technical SEO</td><td><div class="bar-track"><div class="bar-fill" style="width:100%;background:#0F6E56;"><span>10/10</span></div></div></td><td class="bar-count">10</td></tr>
+      <tr><td class="bar-label">GEO / AEO / AI Search</td><td><div class="bar-track"><div class="bar-fill" style="width:80%;background:#0F6E56;"><span>8/10</span></div></div></td><td class="bar-count">8</td></tr>
+      <tr><td class="bar-label">GA4 + Search Console</td><td><div class="bar-track"><div class="bar-fill" style="width:80%;background:#0F6E56;"><span>8/10</span></div></div></td><td class="bar-count">8</td></tr>
+      <tr><td class="bar-label">SEMrush / Ahrefs</td><td><div class="bar-track"><div class="bar-fill" style="width:80%;background:#0F6E56;"><span>8/10</span></div></div></td><td class="bar-count">8</td></tr>
+      <tr><td class="bar-label">Screaming Frog / crawling</td><td><div class="bar-track"><div class="bar-fill" style="width:70%;background:#0F6E56;"><span>7/10</span></div></div></td><td class="bar-count">7</td></tr>
+      <tr><td class="bar-label">Content strategy / search intent</td><td><div class="bar-track"><div class="bar-fill" style="width:70%;background:#0F6E56;"><span>7/10</span></div></div></td><td class="bar-count">7</td></tr>
+      <tr><td class="bar-label">Core Web Vitals</td><td><div class="bar-track"><div class="bar-fill" style="width:70%;background:#0F6E56;"><span>7/10</span></div></div></td><td class="bar-count">7</td></tr>
+      <tr><td class="bar-label">Keyword research</td><td><div class="bar-track"><div class="bar-fill" style="width:70%;background:#0F6E56;"><span>7/10</span></div></div></td><td class="bar-count">7</td></tr>
+      <tr><td class="bar-label">Schema / structured data</td><td><div class="bar-track"><div class="bar-fill" style="width:60%;background:#378ADD;"><span>6/10</span></div></div></td><td class="bar-count">6</td></tr>
+      <tr><td class="bar-label">Cross-functional collaboration</td><td><div class="bar-track"><div class="bar-fill" style="width:60%;background:#378ADD;"><span>6/10</span></div></div></td><td class="bar-count">6</td></tr>
+      <tr><td class="bar-label">CRO / A/B Testing</td><td><div class="bar-track"><div class="bar-fill" style="width:60%;background:#378ADD;"><span>6/10</span></div></div></td><td class="bar-count">6</td></tr>
+      <tr><td class="bar-label">Internal linking</td><td><div class="bar-track"><div class="bar-fill" style="width:60%;background:#378ADD;"><span>6/10</span></div></div></td><td class="bar-count">6</td></tr>
+      <tr><td class="bar-label">LLM optimisation</td><td><div class="bar-track"><div class="bar-fill" style="width:50%;background:#378ADD;"><span>5/10</span></div></div></td><td class="bar-count">5</td></tr>
+      <tr><td class="bar-label">Data storytelling / dashboards</td><td><div class="bar-track"><div class="bar-fill" style="width:50%;background:#378ADD;"><span>5/10</span></div></div></td><td class="bar-count">5</td></tr>
+      <tr><td class="bar-label">E-E-A-T signals</td><td><div class="bar-track"><div class="bar-fill" style="width:40%;background:#888780;"><span>4/10</span></div></div></td><td class="bar-count">4</td></tr>
+      <tr><td class="bar-label">Looker Studio</td><td><div class="bar-track"><div class="bar-fill" style="width:40%;background:#888780;"><span>4/10</span></div></div></td><td class="bar-count">4</td></tr>
+      <tr><td class="bar-label">Link building / domain authority</td><td><div class="bar-track"><div class="bar-fill" style="width:40%;background:#888780;"><span>4/10</span></div></div></td><td class="bar-count">4</td></tr>
+      <tr><td class="bar-label">AI tools fluency</td><td><div class="bar-track"><div class="bar-fill" style="width:40%;background:#888780;"><span>4/10</span></div></div></td><td class="bar-count">4</td></tr>
+    </table>
+  </div>
+
+  <!-- SECTION 3: SHARED KEYWORDS -->
+  <div class="section">
+    <div class="section-title">3. Keywords shared across both profiles — highest CV priority</div>
+    <div class="tag-group">
+      <div class="tags">
+        <span class="tag tag-shared">SEO (technical + organic)</span>
+        <span class="tag tag-shared">GA4</span>
+        <span class="tag tag-shared">Google Search Console</span>
+        <span class="tag tag-shared">SEMrush</span>
+        <span class="tag tag-shared">Data-driven</span>
+        <span class="tag tag-shared">A/B Testing</span>
+        <span class="tag tag-shared">CRO</span>
+        <span class="tag tag-shared">Content strategy</span>
+        <span class="tag tag-shared">Cross-functional</span>
+        <span class="tag tag-shared">Funnel optimisation</span>
+        <span class="tag tag-shared">HubSpot</span>
+        <span class="tag tag-shared">Looker Studio</span>
+        <span class="tag tag-shared">Keyword research</span>
+        <span class="tag tag-shared">Performance reporting</span>
+        <span class="tag tag-shared">AI tools</span>
+        <span class="tag tag-shared">Budget management</span>
+        <span class="tag tag-shared">Stakeholder management</span>
+        <span class="tag tag-shared">End-to-end ownership</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 4: SKILLS MAP -->
+  <div class="section">
+    <div class="section-title">4. Skills map by category</div>
+    <div class="two-col">
+      <div>
+        <div class="tag-group">
+          <div class="tag-group-label">Hard skills — SEO Manager</div>
+          <div class="tags">
+            <span class="tag tag-seo">Technical SEO</span>
+            <span class="tag tag-seo">GEO / AEO</span>
+            <span class="tag tag-seo">Schema markup</span>
+            <span class="tag tag-seo">Core Web Vitals</span>
+            <span class="tag tag-seo">Crawlability / indexation</span>
+            <span class="tag tag-seo">Screaming Frog</span>
+            <span class="tag tag-seo">LLM visibility</span>
+            <span class="tag tag-seo">E-E-A-T</span>
+            <span class="tag tag-seo">Link building</span>
+            <span class="tag tag-seo">On-page optimisation</span>
+            <span class="tag tag-seo">Share of prompt</span>
+          </div>
+        </div>
+        <div class="tag-group" style="margin-top:12px;">
+          <div class="tag-group-label">Hard skills — Growth / Digital Mktg</div>
+          <div class="tags">
+            <span class="tag tag-growth">Demand generation</span>
+            <span class="tag tag-growth">Marketing automation</span>
+            <span class="tag tag-growth">Salesforce / CRM</span>
+            <span class="tag tag-growth">Paid media</span>
+            <span class="tag tag-growth">CAC / LTV / ROAS</span>
+            <span class="tag tag-growth">Pipeline / revenue</span>
+            <span class="tag tag-growth">B2B SaaS</span>
+            <span class="tag tag-growth">ABM</span>
+            <span class="tag tag-growth">Lifecycle marketing</span>
+            <span class="tag tag-growth">Lead scoring</span>
+            <span class="tag tag-growth">Attribution modelling</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="tag-group">
+          <div class="tag-group-label">Soft skills — both profiles</div>
+          <div class="tags">
+            <span class="tag tag-soft">Data-driven mindset</span>
+            <span class="tag tag-soft">Ownership mentality</span>
+            <span class="tag tag-soft">Self-starter</span>
+            <span class="tag tag-soft">Cross-functional collab</span>
+            <span class="tag tag-soft">Stakeholder management</span>
+            <span class="tag tag-soft">Strategic thinking</span>
+            <span class="tag tag-soft">Builder mindset</span>
+            <span class="tag tag-soft">Bias to action</span>
+            <span class="tag tag-soft">Strong communicator</span>
+            <span class="tag tag-soft">Problem-solving</span>
+            <span class="tag tag-soft">Autonomy</span>
+            <span class="tag tag-soft">Executive communication</span>
+          </div>
+        </div>
+        <div class="tag-group" style="margin-top:12px;">
+          <div class="tag-group-label">Emerging keywords — 2025–2026 trend</div>
+          <div class="tags">
+            <span class="tag tag-emerging">GEO (Generative Engine Optimisation)</span>
+            <span class="tag tag-emerging">AI Search / LLM visibility</span>
+            <span class="tag tag-emerging">AI-native workflows</span>
+            <span class="tag tag-emerging">Agentic tools (n8n, Claude Code)</span>
+            <span class="tag tag-emerging">GTM engineering</span>
+            <span class="tag tag-emerging">PLG (Product-Led Growth)</span>
+            <span class="tag tag-emerging">Answer engine optimisation</span>
+            <span class="tag tag-emerging">Intent signals (6sense, Clay)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 5: TOOLS -->
+  <div class="section">
+    <div class="section-title">5. Tools & platforms cited across 25 offers</div>
+    <div class="tags">
+      <span class="tag tag-tool">HubSpot</span>
+      <span class="tag tag-tool">Salesforce</span>
+      <span class="tag tag-tool">GA4</span>
+      <span class="tag tag-tool">Google Search Console</span>
+      <span class="tag tag-tool">Looker Studio</span>
+      <span class="tag tag-tool">SEMrush</span>
+      <span class="tag tag-tool">Ahrefs</span>
+      <span class="tag tag-tool">Screaming Frog</span>
+      <span class="tag tag-tool">Meta Ads Manager</span>
+      <span class="tag tag-tool">Google Ads</span>
+      <span class="tag tag-tool">LinkedIn Ads</span>
+      <span class="tag tag-tool">Hotjar / Microsoft Clarity</span>
+      <span class="tag tag-tool">VWO</span>
+      <span class="tag tag-tool">Klaviyo / Braze / Brevo</span>
+      <span class="tag tag-tool">Mixpanel / Amplitude</span>
+      <span class="tag tag-tool">BigQuery</span>
+      <span class="tag tag-tool">GTM</span>
+      <span class="tag tag-tool">Asana</span>
+      <span class="tag tag-tool">Clay</span>
+      <span class="tag tag-tool">6sense / Bombora</span>
+      <span class="tag tag-tool">n8n / Zapier / Make</span>
+      <span class="tag tag-tool">Figma</span>
+      <span class="tag tag-tool">Retool / Framer</span>
+      <span class="tag tag-tool">AppsFlyer</span>
+      <span class="tag tag-tool">Segment</span>
+      <span class="tag tag-tool">SearchPilot</span>
+      <span class="tag tag-tool">Profound.ai</span>
+      <span class="tag tag-tool">Brightedge / Conductor</span>
+      <span class="tag tag-tool">Deepcrawl</span>
+      <span class="tag tag-tool">YouTube Ads</span>
+      <span class="tag tag-tool">TikTok Ads</span>
+    </div>
+  </div>
+
+  <!-- SECTION 6: FIT BY OFFER -->
+  <div class="section">
+    <div class="section-title">6. Profile fit by offer</div>
+    <table class="fit-table">
+      <thead>
+        <tr>
+          <th>Offer</th>
+          <th>Company</th>
+          <th>Fit</th>
+          <th>Key match / gap</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>B2B Organic Growth Manager</td><td>The Fork</td><td><span class="pill pill-high">High</span></td><td>SEO + CRO + HubSpot + GA4 + BigQuery + A/B testing</td></tr>
+        <tr><td>SEO & GEO Manager</td><td>Deporvillage</td><td><span class="pill pill-high">High</span></td><td>Gap: Schema.org and GEO not explicit in CV yet</td></tr>
+        <tr><td>Organic Growth Manager (SEO)</td><td>Codeway</td><td><span class="pill pill-high">High</span></td><td>EdTech + full stack. Gap: Next.js (non-blocking)</td></tr>
+        <tr><td>SEO & Organic Lead</td><td>IRA Financial</td><td><span class="pill pill-high">High</span></td><td>8+ yrs req. met. Editorial background differentiates</td></tr>
+        <tr><td>Growth Marketing Manager</td><td>MyWellbeing</td><td><span class="pill pill-med">Medium</span></td><td>"Education before purchase" — direct La Salle parallel</td></tr>
+        <tr><td>Senior SEO Manager</td><td>Click&Boat</td><td><span class="pill pill-med">Medium</span></td><td>Gap: marketplace exp. + JS rendering depth</td></tr>
+        <tr><td>Growth Marketing Manager</td><td>SplitMetrics</td><td><span class="pill pill-med">Medium</span></td><td>Gap: agentic tools (n8n, Claude Code)</td></tr>
+        <tr><td>SEO Manager</td><td>LGC</td><td><span class="pill pill-med">Medium</span></td><td>Agency management req. — covered by La Salle vendors</td></tr>
+        <tr><td>Growth Marketing Manager</td><td>Aon</td><td><span class="pill pill-med">Medium</span></td><td>B2B + Salesforce strong match. Gap: HR/services sector</td></tr>
+        <tr><td>Growth Marketing Manager</td><td>August</td><td><span class="pill pill-low">Low</span></td><td>Requires Python / JS / APIs — dev-heavy profile</td></tr>
+        <tr><td>Digital Marketing Manager</td><td>Stradivarius</td><td><span class="pill pill-low">Low</span></td><td>eCommerce + intensive media buying — different sector</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SECTION 7: STRATEGIC INSIGHTS -->
+  <div class="section">
+    <div class="section-title">7. Strategic insights & action points</div>
+
+    <div class="insight insight-warn">
+      <div class="insight-label">Gap — urgent</div>
+      <p>GEO / AEO absent from CV. Present in 8/10 SEO Manager offers. If no hands-on experience yet, this is the most high-return upskilling area before applying to SEO-track roles.</p>
+    </div>
+
+    <div class="insight insight-warn">
+      <div class="insight-label">Gap — urgent</div>
+      <p>Schema markup / structured data not mentioned anywhere in the CV. Cited in 6/10 SEO offers. Add if genuine experience exists at La Salle or previous roles.</p>
+    </div>
+
+    <div class="insight">
+      <div class="insight-label">Differentiator — underused</div>
+      <p>BigQuery appears in 0/10 SEO Manager offers as a requirement — meaning having it is a genuine edge over most candidates. Frame it as "data depth rare in a marketing profile."</p>
+    </div>
+
+    <div class="insight">
+      <div class="insight-label">Differentiator — underused</div>
+      <p>Audiovisual / editorial background is a direct asset for SEO Manager roles at IRA Financial, Inkitt, and LGC, which explicitly require content creation and optimisation ability — not just auditing.</p>
+    </div>
+
+    <div class="insight insight-ok">
+      <div class="insight-label">Confirmed strength</div>
+      <p>+42% organic lead growth over 5 years at La Salle works for both profiles: proves organic impact for SEO Manager, and funnel ownership with measurable result for Growth / Digital Marketing Manager.</p>
+    </div>
+
+    <div class="insight insight-ok">
+      <div class="insight-label">Confirmed strength</div>
+      <p>Dual EdTech background (La Salle + Zigurat) is rare and directly valued by Codeway and MyWellbeing, both of which cite "marketing a product that requires education before purchase" as a key requirement.</p>
+    </div>
+  </div>
+
+  <!-- SECTION 8: EXPERIENCE / MARKET CONTEXT -->
+  <div class="section">
+    <div class="section-title">8. Market context</div>
+    <div class="two-col">
+      <div class="card">
+        <div class="card-title">Years of experience required</div>
+        <div class="card-sub">Across all 25 offers</div>
+        <table style="width:100%;font-size:12px;border-collapse:collapse;">
+          <tr><td style="padding:4px 0;color:#555;">2–3 years</td><td style="text-align:right;color:#1A2B4A;font-weight:700;">2 offers</td></tr>
+          <tr><td style="padding:4px 0;color:#555;">3–5 years</td><td style="text-align:right;color:#1A2B4A;font-weight:700;">5 offers</td></tr>
+          <tr><td style="padding:4px 0;color:#555;">5–7 years</td><td style="text-align:right;color:#1A2B4A;font-weight:700;">10 offers</td></tr>
+          <tr><td style="padding:4px 0;color:#555;">8–10+ years</td><td style="text-align:right;color:#1A2B4A;font-weight:700;">4 offers (inc. Stradivarius 10+, IRA Financial 8+)</td></tr>
+        </table>
+      </div>
+      <div class="card">
+        <div class="card-title">Company context by profile</div>
+        <div class="card-sub">Dominant employer types</div>
+        <table style="width:100%;font-size:12px;border-collapse:collapse;">
+          <tr><td style="padding:4px 0;color:#555;">B2B SaaS / Tech</td><td style="text-align:right;color:#1A2B4A;font-weight:700;">9 offers</td></tr>
+          <tr><td style="padding:4px 0;color:#555;">eCommerce / marketplace</td><td style="text-align:right;color:#1A2B4A;font-weight:700;">6 offers</td></tr>
+          <tr><td style="padding:4px 0;color:#555;">Agency / consultancy</td><td style="text-align:right;color:#1A2B4A;font-weight:700;">4 offers</td></tr>
+          <tr><td style="padding:4px 0;color:#555;">EdTech / Education</td><td style="text-align:right;color:#1A2B4A;font-weight:700;">2 offers</td></tr>
+          <tr><td style="padding:4px 0;color:#555;">Enterprise / financial services</td><td style="text-align:right;color:#1A2B4A;font-weight:700;">4 offers</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Laura Fontcuberta · Job Market Analysis · June 2026</span>
+    <span>25 offers · Spain · USA · UK</span>
+  </div>
+
+</div>
+</body>
+</html>
